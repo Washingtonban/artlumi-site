@@ -2,7 +2,7 @@ const CONFIG = {
   instagram: "",
   tiktok: "",
   youtube: "",
-  whatsapp: "",
+  whatsapp: "5541991019982",
   email: "contato@artlumi.com.br"
 };
 
