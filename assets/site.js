@@ -1,5 +1,5 @@
 const CONFIG = {
-  instagram: "https://www.instagram.com/artlumi.studio/",
+  instagram: "https://www.instagram.com/studio.artlumi/",
   tiktok: "",
   youtube: "",
   whatsapp: "5541991019982",
