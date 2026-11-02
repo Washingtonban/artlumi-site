@@ -10,6 +10,14 @@ Edite o objeto `CONFIG` no começo de `assets/site.js`. Preencha `instagram`, `t
 
 No repositório do GitHub, abra **Settings → Pages** e selecione **Deploy from a branch**, branch **main**, pasta **/ (root)**. O arquivo `CNAME` configura `artlumi.com.br`; o DNS do domínio também precisa apontar para o GitHub Pages. Para conferir localmente, abra `index.html` ou rode `python3 -m http.server` na raiz.
 
+## Bastidores automáticos
+
+A seção Bastidores mostra até três vídeos do Instagram: primeiro os fixados na ordem definida, depois os mais recentes. O GitHub Actions consulta a API diariamente às 10:00 UTC, salva as capas e atualiza `assets/bastidores.json` somente quando os posts mudam. Se o JSON não carregar, os três cards escritos no HTML continuam visíveis.
+
+Para fixar vídeos, edite `bastidores/fixados.json`: `{"fixados": ["https://www.instagram.com/reel/CODIGO/", "https://www.instagram.com/p/OUTRO/"]}`. A lista contém links dos posts fixados, em ordem; shortcodes isolados também funcionam. Para atualizar manualmente, abra **Actions → Bastidores → Run workflow**.
+
+Configuração única: a conta **@artlumi.studio** deve ser profissional (**Criador** ou **Empresa**). Crie um app no Meta for Developers com o produto **Instagram API with Instagram Login**, gere um token long-lived (60 dias) para a conta e salve-o no repositório como secret **IG_TOKEN**. Opcionalmente, salve **GH_PAT**, um token fine-grained com permissão **Secrets: write** neste repositório, para renovar o IG_TOKEN automaticamente no dia 1 de cada mês.
+
 ## Idiomas
 
 A página principal (`/`) é em português; `/en/` e `/es/` têm versões em inglês e espanhol. Na primeira visita à raiz, o navegador sugere um idioma; o seletor PT · EN · ES grava a escolha em `artlumi-lang`. `?lang=pt|en|es` força o idioma na raiz. Edite as três páginas ao atualizar textos ou metadados.

@@ -17,6 +17,49 @@ const messages = copy || {
 };
 const socialNetworks = ["instagram", "tiktok", "youtube"];
 
+const instaGrid = document.querySelector('.insta-grid');
+if (instaGrid) {
+  const labels = {
+    pt: { small: 'Vídeo no Instagram', title: 'Ver vídeo' },
+    en: { small: 'Video on Instagram', title: 'Watch on Instagram' },
+    es: { small: 'Video en Instagram', title: 'Ver en Instagram' }
+  }[language] || { small: 'Vídeo no Instagram', title: 'Ver vídeo' };
+  const dia = new Date().toISOString().slice(0, 10);
+  fetch(`/assets/bastidores.json?v=${dia}`)
+    .then((response) => { if (!response.ok) throw new Error('Bastidores indisponíveis'); return response.json(); })
+    .then(({ posts }) => {
+      if (!Array.isArray(posts) || posts.length === 0) return;
+      const cards = document.createDocumentFragment();
+      for (const post of posts) {
+        if (!post.permalink || !post.imagem) return;
+        const link = document.createElement('a');
+        link.className = 'insta-card';
+        link.href = post.permalink;
+        link.target = '_blank';
+        link.rel = 'noopener';
+        const img = document.createElement('img');
+        img.src = `/${post.imagem.replace(/^\/+/, '')}`;
+        img.width = 360;
+        img.height = 640;
+        img.loading = 'lazy';
+        img.alt = '';
+        const caption = document.createElement('span');
+        caption.className = 'insta-caption';
+        const small = document.createElement('small');
+        small.textContent = labels.small;
+        caption.append(small, document.createTextNode(`${language === 'pt' ? (post.legenda || labels.title) : labels.title} `));
+        const arrow = document.createElement('span');
+        arrow.setAttribute('aria-hidden', 'true');
+        arrow.textContent = '↗︎';
+        caption.append(arrow);
+        link.append(img, caption);
+        cards.append(link);
+      }
+      instaGrid.replaceChildren(cards);
+    })
+    .catch(() => { /* O HTML estático permanece visível. */ });
+}
+
 document.querySelectorAll("[data-config]").forEach((link) => {
   const key = link.dataset.config;
   const value = (CONFIG[key] || "").trim();
