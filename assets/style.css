@@ -249,56 +249,16 @@ em { font-family: Georgia, serif; font-weight: 400; }
 @keyframes star-glow { to { opacity: .55; } }
 @media (prefers-reduced-motion: reduce) { :root[data-theme="dark"] .hero .eyebrow-dot { animation: none; } }
 
-/* Seasonal drawings are decorative and never affect layout. */
+/* Seasonal detail next to the logo. Decorative only: no layout impact, one short animation on load. */
+.brand { position: relative; }
+.season-scene { position: absolute; top: 50%; left: calc(100% + 4px); width: 90px; height: 44px; color: #6f5b91; pointer-events: none; transform: translateY(-50%); }
+.season-scene svg { display: block; width: 100%; height: 100%; overflow: visible; }
+:root[data-theme="dark"] .season-scene { color: #c9b6f2; }
+.season-scene .broom { transform-origin: 66px 29px; animation: broom-sweep .5s ease-in-out 4 alternate both; }
+.season-scene .bulb, .season-scene .star { animation: scene-on .4s ease calc(var(--n) * .25s) both; }
+@keyframes broom-sweep { from { transform: rotate(-10deg); } to { transform: rotate(14deg); } }
+@keyframes scene-on { from { opacity: 0; } }
+@media (max-width: 720px) { .season-scene { left: calc(100% + 2px); width: 60px; height: 29px; } }
+@media (max-width: 400px) { .season-scene { width: 50px; height: 24px; } }
+@media (prefers-reduced-motion: reduce) { .season-scene .broom, .season-scene .bulb, .season-scene .star { animation: none; } }
 .hero, .section, .pillar-card, .venture-card { position: relative; }
-.season-layer { position: fixed; inset: 0; z-index: 10; pointer-events: none; overflow: hidden; }
-.season-item { display: block; pointer-events: none; }
-.season-item svg, .season-elf svg { display: block; width: 100%; height: 100%; }
-.season-bat { position: fixed; left: var(--x); top: var(--y); width: var(--size, 46px); height: var(--size, 46px); opacity: .9; }
-.season-bat.flying { animation: bat-float var(--duration) ease-in-out var(--delay) infinite alternate; }
-.season-bat.sleeping { top: 18%; left: auto; right: 2%; transform: rotate(180deg); opacity: .55; }
-@keyframes bat-float { 50% { transform: translate3d(6px, -34px, 0) rotate(10deg); } 100% { transform: translate3d(-4px, 30px, 0) rotate(-8deg); } }
-.season-bat.flying { animation-name: bat-float; }
-.season-web { position: absolute; z-index: 1; top: var(--top, 0); left: 0; width: var(--s, 120px); height: var(--s, 120px); color: #9a86c4; opacity: .95; transform-origin: top left; transition: opacity 1.2s ease; }
-.season-web.right { left: auto; right: 0; transform: scaleX(-1); transform-origin: center; }
-.season-web.swept { opacity: 0; }
-:root[data-theme="dark"] .season-web { color: #c9b6f2; }
-.season-elf { position: fixed; z-index: 12; right: 14px; bottom: 12px; width: 82px; height: 82px; padding: 0; border: 0; background: transparent; cursor: pointer; filter: drop-shadow(0 5px 7px #17132677); }
-.sweeping-elf { animation: elf-arrive 4s ease-out both; }
-.sweeping-elf.is-sweeping { animation: elf-sweep 1.8s ease-in-out both; }
-.hanging-elf, .gift-elf, .waving-elf { right: 12px; bottom: 8px; }
-.waving-elf { animation: elf-wave 3s ease-in-out infinite; }
-@keyframes elf-arrive { from { transform: translateX(120px); } to { transform: translateX(0); } }
-@keyframes elf-sweep { 50% { transform: translateX(-36px) rotate(-10deg); } }
-@keyframes elf-wave { 50% { transform: rotate(8deg); } }
-.elf-speech { position: absolute; right: 58px; bottom: 75px; width: min(225px, 64vw); padding: 8px 10px; border: 2px solid #a6dcc8; border-radius: 15px; color: #2e2a25; background: #fffdf9; font-size: .75rem; font-weight: 700; text-align: center; }
-.season-lights { position: absolute; z-index: 1; top: 100%; left: 0; display: flex; justify-content: space-around; width: 100%; height: 22px; border-top: 2px solid #a6dcc8; }
-.season-lights i { width: 9px; height: 13px; border-radius: 50%; background: #ffd66b; box-shadow: 0 0 10px #ffd66b; animation: light-twinkle 3s ease-in-out calc(var(--n) * -.25s) infinite alternate; }
-.season-lights i:nth-child(3n) { background: #f6a6c8; box-shadow: 0 0 10px #f6a6c8; }
-.season-lights i:nth-child(3n + 1) { background: #a6dcc8; box-shadow: 0 0 10px #a6dcc8; }
-@keyframes light-twinkle { to { opacity: .35; } }
-.season-wreath { position: absolute; top: 10px; right: 2%; width: 70px; height: 70px; }
-.season-snow, .season-confetti { position: fixed; top: -35px; left: var(--x); color: #c9b6f2; font-size: 22px; opacity: .75; animation: seasonal-fall var(--duration) linear var(--delay) infinite; }
-.season-confetti { color: #ffd66b; }
-.season-confetti:nth-child(3n) { color: #f6a6c8; }
-.season-confetti:nth-child(4n) { color: #a6dcc8; }
-@keyframes seasonal-fall { from { transform: translate3d(0, -30px, 0) rotate(0); } to { transform: translate3d(22px, 110vh, 0) rotate(180deg); } }
-.season-tree { position: absolute; right: 2%; bottom: 7px; width: 110px; height: 110px; opacity: .88; }
-.season-ornament { position: absolute; top: 0; right: 12%; color: #f6a6c8; font-size: 28px; line-height: 1; }
-.season-ornament::before { position: absolute; bottom: 100%; left: 50%; width: 1px; height: 22px; background: currentColor; content: ''; }
-.section-wreath { position: absolute; top: 20px; right: 3%; width: 55px; height: 55px; }
-.season-gift { position: absolute; right: 50px; bottom: 0; width: 42px; height: 42px; }
-.season-paused *, .season-paused *::before, .season-reduced .season-item, .season-reduced .season-elf { animation-play-state: paused !important; }
-.season-reduced .season-bat, .season-reduced .season-snow, .season-reduced .season-confetti { top: 25%; opacity: .55; }
-.season-reduced .season-bat:nth-child(n+4), .season-reduced .season-snow:nth-child(n+5), .season-reduced .season-confetti:nth-child(n+7) { display: none; }
-.season-reduced .sweeping-elf { transform: none; }
-@media (max-width: 720px) { .season-lights { top: 100%; } .season-tree { width: 80px; height: 80px; } .season-elf { width: 68px; height: 68px; } }
-@media (prefers-reduced-motion: reduce) { .season-item, .season-elf { animation: none !important; } }
-.season-bat.hanging { position: absolute; z-index: 2; top: 20px; left: var(--hx, auto); right: var(--hr, auto); animation: none; opacity: .9; }
-.season-bat.hanging svg { transform: rotate(180deg); }
-.season-bat.hanging::before { position: absolute; bottom: 100%; left: 50%; width: 2px; height: 20px; background: #9a86c4; content: ''; }
-:root[data-theme="dark"] .season-bat.hanging::before { background: #c9b6f2; }
-.sweeping-elf.is-sweeping { animation-duration: 3s; }
-@keyframes elf-sweep { 0% { transform: translate3d(0,0,0); } 70% { transform: translate3d(var(--sweep-x), var(--sweep-y), 0); } 82% { transform: translate3d(var(--sweep-x), var(--sweep-y), 0) rotate(-15deg); } 100% { transform: translate3d(0,0,0); } }
-.season-disabled .season-item { display: none !important; }
-.hanging-elf { top: 87px; bottom: auto; }
