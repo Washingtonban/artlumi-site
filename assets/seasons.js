@@ -11,10 +11,10 @@ const SEASON_CALENDAR = [
 (() => {
   const lang = document.documentElement.lang.split('-')[0];
   const labels = {
-    pt: { on: '✳ Enfeites: ligados', off: '✳ Enfeites: desligados', christmas: 'feliz<br>natal ✳' },
-    en: { on: '✳ Decorations: on', off: '✳ Decorations: off', christmas: 'merry<br>christmas ✳' },
-    es: { on: '✳ Adornos: activados', off: '✳ Adornos: desactivados', christmas: 'feliz<br>navidad ✳' }
-  }[lang] || { on: '✳ Enfeites: ligados', off: '✳ Enfeites: desligados', christmas: 'feliz<br>natal ✳' };
+    pt: { on: '✳︎ Enfeites: ligados', off: '✳︎ Enfeites: desligados', christmas: 'feliz<br>natal ✳︎' },
+    en: { on: '✳︎ Decorations: on', off: '✳︎ Decorations: off', christmas: 'merry<br>christmas ✳︎' },
+    es: { on: '✳︎ Adornos: activados', off: '✳︎ Adornos: desactivados', christmas: 'feliz<br>navidad ✳︎' }
+  }[lang] || { on: '✳︎ Enfeites: ligados', off: '✳︎ Enfeites: desligados', christmas: 'feliz<br>natal ✳︎' };
   const query = new URLSearchParams(location.search).get('tema');
   const dateParts = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: 'America/Sao_Paulo', year: 'numeric', month: '2-digit', day: '2-digit' }).formatToParts(new Date()).map(part => [part.type, part.value]));
   const today = `${dateParts.year}-${dateParts.month}-${dateParts.day}`;
