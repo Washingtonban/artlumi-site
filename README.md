@@ -1,6 +1,6 @@
-# Artlumi Studio
+# Artlumi
 
-Landing page estática em português para a Artlumi Studio. Funciona sem build, servidor de aplicação ou bibliotecas JavaScript.
+Landing page estática em português da Artlumi, o projeto que reúne as vertentes (Studio, Books, Keycap e Loja). Funciona sem build, servidor de aplicação ou bibliotecas JavaScript.
 
 ## Contatos e redes
 
