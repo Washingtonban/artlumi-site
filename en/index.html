@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Artlumi is Kellen and Washington's creative home for 3D printed objects, coloring books, and thoughtful ideas for everyday life.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:title" content="Artlumi | Ideas made real">
+    <meta property="og:description" content="Weekend ideas brought to life through 3D printing, coloring books, and original decor.">
+    <meta property="og:image" content="https://artlumi.com.br/assets/img/livro-espaco.jpg">
+    <meta property="og:url" content="https://artlumi.com.br/en/">
+    <meta name="theme-color" content="#F6F1E8">
+    <title>Artlumi | Ideas made real</title>
+    <link rel="canonical" href="https://artlumi.com.br/en/">
+    <link rel="alternate" hreflang="pt-BR" href="https://artlumi.com.br/">
+    <link rel="alternate" hreflang="en" href="https://artlumi.com.br/en/">
+    <link rel="alternate" hreflang="es" href="https://artlumi.com.br/es/">
+    <link rel="alternate" hreflang="x-default" href="https://artlumi.com.br/">
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem('artlumi-theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+          else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+          document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'dark' ? '#1e1a2e' : '#F6F1E8';
+        } catch (_) { /* Optional preference. */ }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-artlumi.svg">
+    <link rel="stylesheet" href="../assets/style.css?v=6">
+    <script src="../assets/site.js?v=4" defer></script>
+    <script src="../assets/seasons.js?v=2" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Artlumi — home">
+          <img src="../assets/img/logo-artlumi.svg" width="150" height="49" loading="lazy" alt="Artlumi">
+        </a>
+        <div class="header-tools">
+          <nav class="language-switch" aria-label="Language"><a href="/" hreflang="pt-BR" lang="pt-BR">PT</a><span aria-hidden="true">·</span><a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a><span aria-hidden="true">·</span><a href="/es/" hreflang="es" lang="es">ES</a></nav>
+          <button class="theme-toggle" type="button" aria-label="Turn on dark mode" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
+        </div>
+        <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="menu-principal" aria-label="Main navigation">
+          <a href="#projeto">Our story</a>
+          <a href="#vertentes">What we make</a>
+          <a href="#sobre">About us</a>
+          <a class="nav-contact" href="#contato">Contact <span aria-hidden="true">↗&#xFE0E;</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> IDEAS WITH SHAPE AND COLOR</p>
+            <h1 id="titulo-principal">Weekend ideas<br>brought to <em>life.</em></h1>
+            <p class="hero-lead">Artlumi is Kellen and Washington's creative workshop: 3D printed objects, coloring books, and little things for homes and children, made with the care of people who use what they create.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projeto">Discover our story</a>
+              <a class="button button-outline" href="#vertentes">Explore what we make</a>
+            </div>
+            <p class="hero-note">Made with imagination by Kellen and Washington.</p>
+          </div>
+          <div class="hero-media">
+            <div class="hero-image-wrap">
+              <img src="../assets/img/livro-espaco.jpg" width="681" height="900" alt="Cover of the Artlumi Books space coloring book: a bear, kitten, and bunny sitting on the Moon" fetchpriority="high">
+            </div>
+            <span class="media-sticker" aria-hidden="true">made<br>to<br>imagine ✳</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-section" id="projeto" aria-labelledby="titulo-projeto">
+        <div class="container">
+          <p class="eyebrow">01 / MEET ARTLUMI</p>
+          <div class="project-intro">
+            <h2 id="titulo-projeto">A project born<br>in <em>spare time.</em></h2>
+            <div class="project-copy">
+              <p>During the week, Kellen and Washington work in tech at large companies. On weekends, the living room table becomes a workbench. Ideas move from notebook to sketch to prototype, then, after plenty of testing, to something you can hold.</p>
+              <p>Artlumi brings those two worlds together. Technology brings the method: measure, test, learn, and improve. Creativity brings color, warmth, and a wish to make everyday life a little lovelier and easier.</p>
+            </div>
+          </div>
+          <div class="pillars-grid">
+            <article class="pillar-card"><span class="pillar-symbol" aria-hidden="true">✳</span><h3>Ideas for home</h3><p>Organizers, stands, and small pieces that finally solve the little problem you've been putting up with for months.</p></article>
+            <article class="pillar-card"><span class="pillar-symbol" aria-hidden="true">✦</span><h3>For little ones</h3><p>Educational toys and coloring books that invite children to learn through play, away from screens.</p></article>
+            <article class="pillar-card"><span class="pillar-symbol" aria-hidden="true">◐</span><h3>Decor with a story</h3><p>Original pieces that give a shelf, a table, or a special day a little more personality.</p></article>
+          </div>
+          <div class="process-band">
+            <h3>How an idea becomes Artlumi</h3>
+            <ol class="process-steps">
+              <li><strong>1. Idea</strong><p>It starts with a real household problem or a chat with the children.</p></li>
+              <li><strong>2. Design</strong><p>We model it on a computer, carefully planning every measurement and fit.</p></li>
+              <li><strong>3. Prototype</strong><p>We print, test, and adjust until everything feels just right.</p></li>
+              <li><strong>4. For you</strong><p>It only becomes a product after we have used it ourselves.</p></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ventures-section" id="vertentes" aria-labelledby="titulo-vertentes">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">02 / WHAT WE MAKE</p><h2 id="titulo-vertentes">One project,<br><em>four paths.</em></h2></div>
+            <p>Each branch has a world of its own. Pick where you'd like to begin.</p>
+          </div>
+          <div class="ventures-grid">
+            <article class="venture-card">
+              <div class="venture-media"><img src="../assets/img/alfabeto-cursivo.jpg" width="1200" height="900" loading="lazy" alt="Colorful cursive letters from a 3D printed interlocking alphabet"></div>
+              <div class="venture-copy"><p class="venture-subtitle">3D printing</p><h3>Artlumi Studio</h3><p>Original pieces and custom 3D printed orders, plus helpful content for anyone getting started with printing.</p><a href="https://studio.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Explore Artlumi Studio">Explore the studio <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+            <article class="venture-card">
+              <div class="venture-media"><img src="../assets/img/livro-safari.jpg" width="681" height="900" loading="lazy" alt="Cover of the children's safari coloring book"></div>
+              <div class="venture-copy"><p class="venture-subtitle">Coloring books</p><h3>Artlumi Books</h3><p>Children's coloring books full of animals and adventures, with the name of each drawing. Available on Amazon.</p><a href="https://book.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Explore Artlumi Books">Explore the books <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+            <article class="venture-card idea-card keycap-card">
+              <div class="venture-media idea-illustration" aria-hidden="true">⌨</div>
+              <div class="venture-copy"><p class="venture-subtitle">Coming soon</p><h3>Artlumi Keycap</h3><p>Original 3D printed keycaps for mechanical keyboards, with a special shape and color for every theme.</p><span class="venture-badge">In the making</span></div>
+            </article>
+            <article class="venture-card idea-card store-card">
+              <div class="venture-media idea-illustration" aria-hidden="true">✳</div>
+              <div class="venture-copy"><p class="venture-subtitle">Coming soon</p><h3>Artlumi Shop</h3><p>A place to find ready made Artlumi pieces and bring them home.</p><a href="https://store.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Visit the Artlumi Shop">Visit the shop <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="sobre" aria-labelledby="titulo-sobre">
+        <div class="container">
+          <p class="eyebrow">03 / THE PEOPLE BEHIND IT</p>
+          <h2 id="titulo-sobre">Two people,<br><em>many ideas.</em></h2>
+          <p class="about-lead">She's a machine learning engineer; he's a software architect. Engineers by training and makers at heart, Kellen and Washington came together around a simple idea: create things that solve life's little problems.</p>
+          <div class="bios-grid">
+            <article class="bio-card">
+              <div class="bio-header"><img class="bio-photo" src="../assets/img/perfil/kellen.jpg?v=1" width="150" height="150" loading="lazy" alt="Photo of Kellen Guimarães"><div><h3>Kellen Guimarães</h3><p class="bio-role">Machine learning engineer</p></div></div>
+              <p>Born on the banks of Rio Cachoeri near Oriximiná, Pará, Kellen learned to read at three. That early love of words still inspires her children's books. A mechatronics engineer with a master's in electrical engineering, she studied at CSUN in California and now works in machine learning. She loves drawing and painting; at Artlumi, she asks what a product should do, for whom, and why.</p>
+              <div class="bio-links"><a href="https://www.instagram.com/kellen.ag/" target="_blank" rel="noopener" aria-label="Kellen's Instagram">Instagram <span aria-hidden="true">↗&#xFE0E;</span></a><a href="https://www.linkedin.com/in/kellenguimaraes" target="_blank" rel="noopener" aria-label="Kellen's LinkedIn">LinkedIn <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+            <article class="bio-card">
+              <div class="bio-header"><img class="bio-photo" src="../assets/img/perfil/washington.jpg?v=1" width="150" height="150" loading="lazy" alt="Photo of Washington Barbosa"><div><h3>Washington Barbosa</h3><p class="bio-role">Software architect and maker</p></div></div>
+              <p>Born in Goiana, Pernambuco, Washington always dreamed of becoming an engineer. Watching Iron Man led him to mechatronics: he wanted to build his own suit. The suit is still a work in progress, but the workshop is real. Today he's a software architect who spends weekends on 3D modeling, printing, and mechanical keyboards. At Artlumi, he turns sketches into prototypes and prototypes into products.</p>
+              <div class="bio-links"><a href="https://www.instagram.com/washingtonban/" target="_blank" rel="noopener" aria-label="Washington's Instagram">Instagram <span aria-hidden="true">↗&#xFE0E;</span></a><a href="https://www.linkedin.com/in/washingtonban/" target="_blank" rel="noopener" aria-label="Washington's LinkedIn">LinkedIn <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section social-section" id="redes" aria-labelledby="titulo-redes">
+        <div class="container social-inner">
+          <div><p class="eyebrow">04 / INSIDE ARTLUMI</p><h2 id="titulo-redes">Follow along <em>behind the scenes.</em></h2></div>
+          <div class="social-links" aria-label="Social media">
+            <a class="social-link" data-config="instagram" target="_blank" rel="noopener" hidden>Instagram <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="social-link" data-config="tiktok" target="_blank" rel="noopener" hidden>TikTok <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="social-link" data-config="youtube" target="_blank" rel="noopener" hidden>YouTube <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <p class="coming-soon" id="redes-em-breve">Coming soon <span aria-hidden="true">✳</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contato" aria-labelledby="titulo-contato">
+        <div class="container contact-inner">
+          <p class="eyebrow">05 / SHALL WE MAKE SOMETHING?</p>
+          <h2 id="titulo-contato">Your idea starts<br>with a <em>conversation.</em></h2>
+          <p>Have an idea for your home, your children, or a gift? Tell us what you imagine: color, size, and timing. We'll send you a quote.</p>
+          <div class="contact-actions">
+            <a class="button button-yellow" data-config="whatsapp" hidden>Chat on WhatsApp <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="contact-email" data-config="email" href="mailto:contato@artlumi.com.br">contato@artlumi.com.br <span aria-hidden="true">↗&#xFE0E;</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#inicio" aria-label="Artlumi — back to top"><img src="../assets/img/logo-artlumi-branco.svg" width="150" height="49" loading="lazy" alt="Artlumi"></a>
+        <nav aria-label="Footer navigation"><a href="#projeto">Our story</a><a href="#vertentes">What we make</a><a href="#sobre">About us</a><a href="#redes">Social</a><a href="#contato">Contact</a></nav>
+        <button class="decor-toggle" type="button" aria-pressed="true">✳ Decorations: on</button>
+        <small>© 2026 Artlumi</small>
+      </div>
+    </footer>
+  </body>
+</html>

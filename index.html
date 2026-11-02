@@ -9,12 +9,41 @@
     <meta property="og:title" content="Artlumi | Ideias que ganham forma">
     <meta property="og:description" content="Ideias de fim de semana que ganham forma: impressão 3D, livros de colorir e decoração autoral.">
     <meta property="og:image" content="https://artlumi.com.br/assets/img/livro-espaco.jpg">
-    <meta property="og:url" content="https://artlumi.com.br">
+    <meta property="og:url" content="https://artlumi.com.br/">
     <meta name="theme-color" content="#F6F1E8">
     <title>Artlumi | Ideias que ganham forma</title>
+    <link rel="canonical" href="https://artlumi.com.br/">
+    <link rel="alternate" hreflang="pt-BR" href="https://artlumi.com.br/">
+    <link rel="alternate" hreflang="en" href="https://artlumi.com.br/en/">
+    <link rel="alternate" hreflang="es" href="https://artlumi.com.br/es/">
+    <link rel="alternate" hreflang="x-default" href="https://artlumi.com.br/">
+    <script>
+      (() => {
+        let savedTheme = null;
+        try { savedTheme = localStorage.getItem('artlumi-theme'); } catch (_) { /* Optional preference. */ }
+        if (savedTheme === 'light' || savedTheme === 'dark') document.documentElement.dataset.theme = savedTheme;
+        else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+        document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'dark' ? '#1e1a2e' : '#F6F1E8';
+        const forced = new URLSearchParams(location.search).get('lang');
+        if (['pt', 'en', 'es'].includes(forced)) {
+          try { localStorage.setItem('artlumi-lang', forced); } catch (_) { /* Optional preference. */ }
+          if (forced !== 'pt') location.replace('/' + forced + '/' + location.hash);
+          return;
+        }
+        let savedLanguage = null;
+        try { savedLanguage = localStorage.getItem('artlumi-lang'); } catch (_) { /* Optional preference. */ }
+        let internalReferrer = false;
+        try { internalReferrer = document.referrer && new URL(document.referrer).hostname === location.hostname; } catch (_) { /* Ignore an invalid referrer. */ }
+        if (savedLanguage || internalReferrer) return;
+        const languages = navigator.languages?.length ? navigator.languages : [navigator.language || ''];
+        const preferred = languages.map(value => value.toLowerCase().split('-')[0]).find(value => ['pt', 'en', 'es'].includes(value)) || 'en';
+        if (preferred !== 'pt') location.replace('/' + preferred + '/' + location.hash);
+      })();
+    </script>
     <link rel="icon" type="image/svg+xml" href="assets/img/logo-artlumi.svg">
-    <link rel="stylesheet" href="assets/style.css?v=3">
-    <script src="assets/site.js?v=2" defer></script>
+    <link rel="stylesheet" href="assets/style.css?v=6">
+    <script src="assets/site.js?v=4" defer></script>
+    <script src="assets/seasons.js?v=2" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -22,6 +51,10 @@
         <a class="brand" href="#inicio" aria-label="Artlumi — início">
           <img src="assets/img/logo-artlumi.svg" width="150" height="49" loading="lazy" alt="Artlumi">
         </a>
+        <div class="header-tools">
+          <nav class="language-switch" aria-label="Idioma"><a href="/" hreflang="pt-BR" lang="pt-BR" aria-current="true">PT</a><span aria-hidden="true">·</span><a href="/en/" hreflang="en" lang="en">EN</a><span aria-hidden="true">·</span><a href="/es/" hreflang="es" lang="es">ES</a></nav>
+          <button class="theme-toggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
+        </div>
         <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menu">
           <span></span><span></span><span></span>
         </button>
@@ -29,7 +62,7 @@
           <a href="#projeto">Projeto</a>
           <a href="#vertentes">Vertentes</a>
           <a href="#sobre">Quem somos</a>
-          <a class="nav-contact" href="#contato">Contato <span aria-hidden="true">↗</span></a>
+          <a class="nav-contact" href="#contato">Contato <span aria-hidden="true">↗&#xFE0E;</span></a>
         </nav>
       </div>
     </header>
@@ -92,11 +125,11 @@
           <div class="ventures-grid">
             <article class="venture-card">
               <div class="venture-media"><img src="assets/img/alfabeto-cursivo.jpg" width="1200" height="900" loading="lazy" alt="Letras cursivas coloridas de um alfabeto de encaixe impresso em 3D"></div>
-              <div class="venture-copy"><p class="venture-subtitle">Impressão 3D</p><h3>Artlumi Studio</h3><p>Peças autorais e encomendas personalizadas impressas em 3D, além de conteúdo para quem está começando no mundo da impressão.</p><a href="https://studio.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Conhecer Artlumi Studio">Conhecer o estúdio <span aria-hidden="true">↗</span></a></div>
+              <div class="venture-copy"><p class="venture-subtitle">Impressão 3D</p><h3>Artlumi Studio</h3><p>Peças autorais e encomendas personalizadas impressas em 3D, além de conteúdo para quem está começando no mundo da impressão.</p><a href="https://studio.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Conhecer Artlumi Studio">Conhecer o estúdio <span aria-hidden="true">↗&#xFE0E;</span></a></div>
             </article>
             <article class="venture-card">
               <div class="venture-media"><img src="assets/img/livro-safari.jpg" width="681" height="900" loading="lazy" alt="Capa do livro de colorir infantil Safári"></div>
-              <div class="venture-copy"><p class="venture-subtitle">Livros de colorir</p><h3>Artlumi Books</h3><p>Livros de colorir infantis com bichos, aventuras e o nome de cada desenho em inglês, à venda na Amazon.</p><a href="https://book.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Conhecer Artlumi Books">Conhecer os livros <span aria-hidden="true">↗</span></a></div>
+              <div class="venture-copy"><p class="venture-subtitle">Livros de colorir</p><h3>Artlumi Books</h3><p>Livros de colorir infantis com bichos, aventuras e o nome de cada desenho em inglês, à venda na Amazon.</p><a href="https://book.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Conhecer Artlumi Books">Conhecer os livros <span aria-hidden="true">↗&#xFE0E;</span></a></div>
             </article>
             <article class="venture-card idea-card keycap-card">
               <div class="venture-media idea-illustration" aria-hidden="true">⌨</div>
@@ -104,7 +137,7 @@
             </article>
             <article class="venture-card idea-card store-card">
               <div class="venture-media idea-illustration" aria-hidden="true">✳</div>
-              <div class="venture-copy"><p class="venture-subtitle">Em breve</p><h3>Loja Artlumi</h3><p>Um lugar para encontrar as peças prontas da Artlumi e levar para casa.</p><a href="https://store.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Visitar a Loja Artlumi">Visitar a loja <span aria-hidden="true">↗</span></a></div>
+              <div class="venture-copy"><p class="venture-subtitle">Em breve</p><h3>Loja Artlumi</h3><p>Um lugar para encontrar as peças prontas da Artlumi e levar para casa.</p><a href="https://store.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Visitar a Loja Artlumi">Visitar a loja <span aria-hidden="true">↗&#xFE0E;</span></a></div>
             </article>
           </div>
         </div>
@@ -117,14 +150,14 @@
           <p class="about-lead">Ela, engenheira de machine learning; ele, arquiteto de software. Engenheiros por formação e criadores por natureza, a Kellen e o Washington se juntaram com um objetivo simples: criar e resolver os pequenos problemas da vida.</p>
           <div class="bios-grid">
             <article class="bio-card">
-              <div class="bio-header"><span class="bio-initials" aria-hidden="true">KG</span><div><h3>Kellen Guimarães</h3><p class="bio-role">Engenheira de machine learning</p></div></div>
+              <div class="bio-header"><img class="bio-photo" src="assets/img/perfil/kellen.jpg?v=1" width="150" height="150" loading="lazy" alt="Foto de Kellen Guimarães"><div><h3>Kellen Guimarães</h3><p class="bio-role">Engenheira de machine learning</p></div></div>
               <p>Nasceu às margens do rio Cachoeri, perto de Oriximiná, no Pará. Aprendeu a ler aos 3 anos, e é daí que vem a vontade de criar livros para crianças. Engenheira mecatrônica e mestre em engenharia elétrica, fez intercâmbio na Califórnia, na CSUN, e hoje trabalha com machine learning. Ama criar, desenhar e pintar; na Artlumi, cuida do olhar de produto: o que faz sentido, para quem e por quê.</p>
-              <div class="bio-links"><a href="https://www.instagram.com/kellen.ag/" target="_blank" rel="noopener" aria-label="Instagram da Kellen">Instagram <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/kellenguimaraes" target="_blank" rel="noopener" aria-label="LinkedIn da Kellen">LinkedIn <span aria-hidden="true">↗</span></a></div>
+              <div class="bio-links"><a href="https://www.instagram.com/kellen.ag/" target="_blank" rel="noopener" aria-label="Instagram da Kellen">Instagram <span aria-hidden="true">↗&#xFE0E;</span></a><a href="https://www.linkedin.com/in/kellenguimaraes" target="_blank" rel="noopener" aria-label="LinkedIn da Kellen">LinkedIn <span aria-hidden="true">↗&#xFE0E;</span></a></div>
             </article>
             <article class="bio-card">
-              <div class="bio-header"><span class="bio-initials" aria-hidden="true">WB</span><div><h3>Washington Barbosa</h3><p class="bio-role">Arquiteto de software e maker</p></div></div>
+              <div class="bio-header"><img class="bio-photo" src="assets/img/perfil/washington.jpg?v=1" width="150" height="150" loading="lazy" alt="Foto de Washington Barbosa"><div><h3>Washington Barbosa</h3><p class="bio-role">Arquiteto de software e maker</p></div></div>
               <p>Nasceu em Goiana, Pernambuco, e sempre sonhou ser engenheiro. Quando assistiu a Homem de Ferro, escolheu a mecatrônica: queria construir a própria armadura. A armadura ainda não saiu, mas a oficina, sim: hoje é arquiteto de software e, nos fins de semana, cuida da modelagem 3D, da impressão e dos teclados mecânicos. Na Artlumi, transforma rascunhos em protótipos e protótipos em produtos.</p>
-              <div class="bio-links"><a href="https://www.instagram.com/washingtonban/" target="_blank" rel="noopener" aria-label="Instagram do Washington">Instagram <span aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/washingtonban/" target="_blank" rel="noopener" aria-label="LinkedIn do Washington">LinkedIn <span aria-hidden="true">↗</span></a></div>
+              <div class="bio-links"><a href="https://www.instagram.com/washingtonban/" target="_blank" rel="noopener" aria-label="Instagram do Washington">Instagram <span aria-hidden="true">↗&#xFE0E;</span></a><a href="https://www.linkedin.com/in/washingtonban/" target="_blank" rel="noopener" aria-label="LinkedIn do Washington">LinkedIn <span aria-hidden="true">↗&#xFE0E;</span></a></div>
             </article>
           </div>
         </div>
@@ -134,9 +167,9 @@
         <div class="container social-inner">
           <div><p class="eyebrow">04 / POR DENTRO DA ARTLUMI</p><h2 id="titulo-redes">Acompanhe os <em>bastidores.</em></h2></div>
           <div class="social-links" aria-label="Redes sociais">
-            <a class="social-link" data-config="instagram" target="_blank" rel="noopener" hidden>Instagram <span aria-hidden="true">↗</span></a>
-            <a class="social-link" data-config="tiktok" target="_blank" rel="noopener" hidden>TikTok <span aria-hidden="true">↗</span></a>
-            <a class="social-link" data-config="youtube" target="_blank" rel="noopener" hidden>YouTube <span aria-hidden="true">↗</span></a>
+            <a class="social-link" data-config="instagram" target="_blank" rel="noopener" hidden>Instagram <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="social-link" data-config="tiktok" target="_blank" rel="noopener" hidden>TikTok <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="social-link" data-config="youtube" target="_blank" rel="noopener" hidden>YouTube <span aria-hidden="true">↗&#xFE0E;</span></a>
             <p class="coming-soon" id="redes-em-breve">Em breve <span aria-hidden="true">✳</span></p>
           </div>
         </div>
@@ -148,8 +181,8 @@
           <h2 id="titulo-contato">Sua ideia começa<br>com uma <em>conversa.</em></h2>
           <p>Tem uma ideia para a sua casa, para as crianças ou para presentear? Conte o que você imagina: cor, tamanho e prazo. Respondemos com um orçamento.</p>
           <div class="contact-actions">
-            <a class="button button-yellow" data-config="whatsapp" hidden>Conversar no WhatsApp <span aria-hidden="true">↗</span></a>
-            <a class="contact-email" data-config="email" href="mailto:contato@artlumi.com.br">contato@artlumi.com.br <span aria-hidden="true">↗</span></a>
+            <a class="button button-yellow" data-config="whatsapp" hidden>Conversar no WhatsApp <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="contact-email" data-config="email" href="mailto:contato@artlumi.com.br">contato@artlumi.com.br <span aria-hidden="true">↗&#xFE0E;</span></a>
           </div>
         </div>
       </section>
@@ -159,6 +192,7 @@
       <div class="container footer-inner">
         <a href="#inicio" aria-label="Artlumi — voltar ao início"><img src="assets/img/logo-artlumi-branco.svg" width="150" height="49" loading="lazy" alt="Artlumi"></a>
         <nav aria-label="Navegação do rodapé"><a href="#projeto">Projeto</a><a href="#vertentes">Vertentes</a><a href="#sobre">Quem somos</a><a href="#redes">Redes</a><a href="#contato">Contato</a></nav>
+        <button class="decor-toggle" type="button" aria-pressed="true">✳ Enfeites: ligados</button>
         <small>© 2026 Artlumi</small>
       </div>
     </footer>

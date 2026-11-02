@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Artlumi es el proyecto creativo de Kellen y Washington: impresión 3D, libros para colorear e ideas para el hogar, la infancia y la decoración.">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:title" content="Artlumi | Ideas que toman forma">
+    <meta property="og:description" content="Ideas de fin de semana que cobran vida: impresión 3D, libros para colorear y decoración original.">
+    <meta property="og:image" content="https://artlumi.com.br/assets/img/livro-espaco.jpg">
+    <meta property="og:url" content="https://artlumi.com.br/es/">
+    <meta name="theme-color" content="#F6F1E8">
+    <title>Artlumi | Ideas que toman forma</title>
+    <link rel="canonical" href="https://artlumi.com.br/es/">
+    <link rel="alternate" hreflang="pt-BR" href="https://artlumi.com.br/">
+    <link rel="alternate" hreflang="en" href="https://artlumi.com.br/en/">
+    <link rel="alternate" hreflang="es" href="https://artlumi.com.br/es/">
+    <link rel="alternate" hreflang="x-default" href="https://artlumi.com.br/">
+    <script>
+      (() => {
+        try {
+          const saved = localStorage.getItem('artlumi-theme');
+          if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+          else if (matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark';
+          document.querySelector('meta[name="theme-color"]').content = document.documentElement.dataset.theme === 'dark' ? '#1e1a2e' : '#F6F1E8';
+        } catch (_) { /* Optional preference. */ }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="../assets/img/logo-artlumi.svg">
+    <link rel="stylesheet" href="../assets/style.css?v=6">
+    <script src="../assets/site.js?v=4" defer></script>
+    <script src="../assets/seasons.js?v=2" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#inicio" aria-label="Artlumi — inicio">
+          <img src="../assets/img/logo-artlumi.svg" width="150" height="49" loading="lazy" alt="Artlumi">
+        </a>
+        <div class="header-tools">
+          <nav class="language-switch" aria-label="Idioma"><a href="/" hreflang="pt-BR" lang="pt-BR">PT</a><span aria-hidden="true">·</span><a href="/en/" hreflang="en" lang="en">EN</a><span aria-hidden="true">·</span><a href="/es/" hreflang="es" lang="es" aria-current="true">ES</a></nav>
+          <button class="theme-toggle" type="button" aria-label="Activar modo oscuro" aria-pressed="false"><span class="theme-icon" aria-hidden="true">☾</span></button>
+        </div>
+        <button class="menu-toggle" type="button" aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="site-nav" id="menu-principal" aria-label="Navegación principal">
+          <a href="#projeto">Proyecto</a>
+          <a href="#vertentes">Nuestras líneas</a>
+          <a href="#sobre">Quiénes somos</a>
+          <a class="nav-contact" href="#contato">Contacto <span aria-hidden="true">↗&#xFE0E;</span></a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio" aria-labelledby="titulo-principal">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> IDEAS CON FORMA Y COLOR</p>
+            <h1 id="titulo-principal">Ideas de fin de semana<br>que cobran <em>vida.</em></h1>
+            <p class="hero-lead">Artlumi es el taller creativo de Kellen y Washington: objetos impresos en 3D, libros para colorear e ideas para el hogar y los niños, hechos con el cariño de quienes usan lo que crean.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projeto">Conoce el proyecto</a>
+              <a class="button button-outline" href="#vertentes">Descubre nuestras líneas</a>
+            </div>
+            <p class="hero-note">Creado con imaginación por Kellen y Washington.</p>
+          </div>
+          <div class="hero-media">
+            <div class="hero-image-wrap">
+              <img src="../assets/img/livro-espaco.jpg" width="681" height="900" alt="Portada del libro para colorear Espacio de Artlumi Books: un oso, un gatito y un conejo sentados en la Luna" fetchpriority="high">
+            </div>
+            <span class="media-sticker" aria-hidden="true">hecho<br>para<br>imaginar ✳</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section project-section" id="projeto" aria-labelledby="titulo-projeto">
+        <div class="container">
+          <p class="eyebrow">01 / CONOCE ARTLUMI</p>
+          <div class="project-intro">
+            <h2 id="titulo-projeto">Un proyecto que nace<br>en el <em>tiempo libre.</em></h2>
+            <div class="project-copy">
+              <p>Entre semana, Kellen y Washington trabajan en tecnología en grandes empresas. Los fines de semana, la mesa de la sala se convierte en taller: las ideas pasan del cuaderno al dibujo, al prototipo y, tras muchas pruebas, a un objeto real.</p>
+              <p>Artlumi une esos dos mundos. De la tecnología viene el método: medir, probar, aprender y mejorar. Del lado creativo llegan el color, el cariño y las ganas de hacer la vida cotidiana más bonita y sencilla.</p>
+            </div>
+          </div>
+          <div class="pillars-grid">
+            <article class="pillar-card"><span class="pillar-symbol" aria-hidden="true">✳</span><h3>Ideas para el hogar</h3><p>Organizadores, soportes y pequeñas piezas que resuelven ese detalle que lleva meses molestando.</p></article>
+            <article class="pillar-card"><span class="pillar-symbol" aria-hidden="true">✦</span><h3>Para los niños</h3><p>Juguetes educativos y libros para colorear que invitan a aprender jugando, lejos de las pantallas.</p></article>
+            <article class="pillar-card"><span class="pillar-symbol" aria-hidden="true">◐</span><h3>Decoración con historia</h3><p>Piezas originales que dan personalidad a un estante, una mesa o un día especial.</p></article>
+          </div>
+          <div class="process-band">
+            <h3>Cómo una idea se convierte en Artlumi</h3>
+            <ol class="process-steps">
+              <li><strong>1. Idea</strong><p>Nace de una necesidad de casa o de una conversación con los niños.</p></li>
+              <li><strong>2. Diseño</strong><p>Lo modelamos en la computadora, cuidando las medidas y los encajes.</p></li>
+              <li><strong>3. Prototipo</strong><p>Imprimimos, probamos y ajustamos hasta que todo quede bien.</p></li>
+              <li><strong>4. Para ti</strong><p>Solo se convierte en producto cuando supera nuestra propia prueba de uso.</p></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section class="section ventures-section" id="vertentes" aria-labelledby="titulo-vertentes">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="eyebrow">02 / NUESTRAS LÍNEAS</p><h2 id="titulo-vertentes">Un proyecto,<br><em>cuatro caminos.</em></h2></div>
+            <p>Cada línea tiene su propio espacio. Elige por dónde empezar.</p>
+          </div>
+          <div class="ventures-grid">
+            <article class="venture-card">
+              <div class="venture-media"><img src="../assets/img/alfabeto-cursivo.jpg" width="1200" height="900" loading="lazy" alt="Letras cursivas de colores de un alfabeto encajable impreso en 3D"></div>
+              <div class="venture-copy"><p class="venture-subtitle">Impresión 3D</p><h3>Artlumi Studio</h3><p>Piezas originales y encargos personalizados impresos en 3D, además de contenido para quienes empiezan a imprimir.</p><a href="https://studio.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Conoce Artlumi Studio">Conoce el estudio <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+            <article class="venture-card">
+              <div class="venture-media"><img src="../assets/img/livro-safari.jpg" width="681" height="900" loading="lazy" alt="Portada del libro infantil para colorear Safari"></div>
+              <div class="venture-copy"><p class="venture-subtitle">Libros para colorear</p><h3>Artlumi Books</h3><p>Libros infantiles para colorear, llenos de animales y aventuras, con el nombre de cada dibujo en inglés. Disponibles en Amazon.</p><a href="https://book.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Conoce Artlumi Books">Conoce los libros <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+            <article class="venture-card idea-card keycap-card">
+              <div class="venture-media idea-illustration" aria-hidden="true">⌨</div>
+              <div class="venture-copy"><p class="venture-subtitle">Próximamente</p><h3>Artlumi Keycap</h3><p>Teclas originales impresas en 3D para teclados mecánicos, con formas y colores propios para cada tema.</p><span class="venture-badge">En desarrollo</span></div>
+            </article>
+            <article class="venture-card idea-card store-card">
+              <div class="venture-media idea-illustration" aria-hidden="true">✳</div>
+              <div class="venture-copy"><p class="venture-subtitle">Próximamente</p><h3>Tienda Artlumi</h3><p>Un lugar para encontrar las piezas listas de Artlumi y llevarlas a casa.</p><a href="https://store.artlumi.com.br/" target="_blank" rel="noopener" aria-label="Visitar la Tienda Artlumi">Visitar la tienda <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section about-section" id="sobre" aria-labelledby="titulo-sobre">
+        <div class="container">
+          <p class="eyebrow">03 / QUIÉNES ESTÁN DETRÁS</p>
+          <h2 id="titulo-sobre">Dos personas,<br><em>muchas ideas.</em></h2>
+          <p class="about-lead">Ella es ingeniera de aprendizaje automático; él, arquitecto de software. Ingenieros de formación y creadores por naturaleza, Kellen y Washington se unieron con una idea sencilla: crear y resolver los pequeños problemas de la vida.</p>
+          <div class="bios-grid">
+            <article class="bio-card">
+              <div class="bio-header"><img class="bio-photo" src="../assets/img/perfil/kellen.jpg?v=1" width="150" height="150" loading="lazy" alt="Foto de Kellen Guimarães"><div><h3>Kellen Guimarães</h3><p class="bio-role">Ingeniera de aprendizaje automático</p></div></div>
+              <p>Nació a orillas de Rio Cachoeri, cerca de Oriximiná, en Pará. Aprendió a leer a los tres años, y de ahí nace su deseo de crear libros para niños. Ingeniera mecatrónica con maestría en ingeniería eléctrica, estudió en CSUN, California, y hoy trabaja en aprendizaje automático. Le encanta dibujar y pintar; en Artlumi cuida la visión de producto: qué tiene sentido, para quién y por qué.</p>
+              <div class="bio-links"><a href="https://www.instagram.com/kellen.ag/" target="_blank" rel="noopener" aria-label="Instagram de Kellen">Instagram <span aria-hidden="true">↗&#xFE0E;</span></a><a href="https://www.linkedin.com/in/kellenguimaraes" target="_blank" rel="noopener" aria-label="LinkedIn de Kellen">LinkedIn <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+            <article class="bio-card">
+              <div class="bio-header"><img class="bio-photo" src="../assets/img/perfil/washington.jpg?v=1" width="150" height="150" loading="lazy" alt="Foto de Washington Barbosa"><div><h3>Washington Barbosa</h3><p class="bio-role">Arquitecto de software y maker</p></div></div>
+              <p>Nació en Goiana, Pernambuco, y siempre soñó con ser ingeniero. Al ver Iron Man eligió la mecatrónica: quería construir su propia armadura. La armadura aún está pendiente, pero el taller ya existe. Hoy es arquitecto de software y dedica los fines de semana al modelado 3D, la impresión y los teclados mecánicos. En Artlumi, convierte bocetos en prototipos y prototipos en productos.</p>
+              <div class="bio-links"><a href="https://www.instagram.com/washingtonban/" target="_blank" rel="noopener" aria-label="Instagram de Washington">Instagram <span aria-hidden="true">↗&#xFE0E;</span></a><a href="https://www.linkedin.com/in/washingtonban/" target="_blank" rel="noopener" aria-label="LinkedIn de Washington">LinkedIn <span aria-hidden="true">↗&#xFE0E;</span></a></div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section social-section" id="redes" aria-labelledby="titulo-redes">
+        <div class="container social-inner">
+          <div><p class="eyebrow">04 / DENTRO DE ARTLUMI</p><h2 id="titulo-redes">Acompáñanos <em>entre bastidores.</em></h2></div>
+          <div class="social-links" aria-label="Redes sociales">
+            <a class="social-link" data-config="instagram" target="_blank" rel="noopener" hidden>Instagram <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="social-link" data-config="tiktok" target="_blank" rel="noopener" hidden>TikTok <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="social-link" data-config="youtube" target="_blank" rel="noopener" hidden>YouTube <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <p class="coming-soon" id="redes-em-breve">Próximamente <span aria-hidden="true">✳</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contato" aria-labelledby="titulo-contato">
+        <div class="container contact-inner">
+          <p class="eyebrow">05 / ¿CREAMOS ALGO JUNTOS?</p>
+          <h2 id="titulo-contato">Tu idea empieza<br>con una <em>conversación.</em></h2>
+          <p>¿Tienes una idea para tu casa, para los niños o para regalar? Cuéntanos cómo la imaginas: color, tamaño y plazo. Te enviaremos un presupuesto.</p>
+          <div class="contact-actions">
+            <a class="button button-yellow" data-config="whatsapp" hidden>Hablar por WhatsApp <span aria-hidden="true">↗&#xFE0E;</span></a>
+            <a class="contact-email" data-config="email" href="mailto:contato@artlumi.com.br">contato@artlumi.com.br <span aria-hidden="true">↗&#xFE0E;</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <a href="#inicio" aria-label="Artlumi — volver al inicio"><img src="../assets/img/logo-artlumi-branco.svg" width="150" height="49" loading="lazy" alt="Artlumi"></a>
+        <nav aria-label="Navegación del pie de página"><a href="#projeto">Proyecto</a><a href="#vertentes">Nuestras líneas</a><a href="#sobre">Quiénes somos</a><a href="#redes">Redes</a><a href="#contato">Contacto</a></nav>
+        <button class="decor-toggle" type="button" aria-pressed="true">✳ Adornos: activados</button>
+        <small>© 2026 Artlumi</small>
+      </div>
+    </footer>
+  </body>
+</html>
